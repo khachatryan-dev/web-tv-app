@@ -4,7 +4,7 @@ Here you go! Below is the full enhanced `README.md` content for your **Web TV St
 
 # 📺 Web TV Streaming App
 
-![App Screenshot](/public/images/screenshot.png)
+![App Screenshot](/public/images/preview/preview.png)
 
 A modern **TV streaming application** built with **Next.js 15**, **Tailwind CSS v4**, and **TypeScript**. It features a responsive layout with a video player, trending carousel, and sidebar navigation for seamless browsing.
 
