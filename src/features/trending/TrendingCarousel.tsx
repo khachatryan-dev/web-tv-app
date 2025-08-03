@@ -6,10 +6,12 @@ import 'swiper/css';
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import {TrendingProps} from "@/features/trending/types";
+import LocalStorageService from "@/lib/LocalStorageService";
 
 const Trending: React.FC<TrendingProps> = ({ videos }: TrendingProps) => {
     const router = useRouter();
     const handleSelect =  (id: string) => {
+        LocalStorageService.setItem('featuredId', id);
         router.push(`/?featuredId=${id}`);
     }
     return (

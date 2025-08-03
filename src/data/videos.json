@@ -1,15 +1,15 @@
 {
-  "Featured": {
-    "Id": "6",
-    "Title": "Avengers: Endgame",
-    "CoverImage": "images/featured/Avengers_Endgame.webp",
-    "Date": "2019-04-26T00:00:00.000000",
+  "Featured":  {
+    "Id": "1",
+    "Title": "The Irishman",
+    "CoverImage": "images/featured/The_Irishman.jpg",
+    "Date": "2019-11-01T00:00:00.000000",
     "ReleaseYear": "2019",
-    "MpaRating": "PG-13",
+    "MpaRating": "R",
     "Category": "Movie",
-    "Duration": "10860",
-    "VideoUrl": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
-    "Description": "After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos' actions and restore balance to the universe."
+    "Duration": "12540",
+    "VideoUrl": "https://www.youtube.com/watch?v=WHXxVmeGQUc",
+    "Description": "Hit man Frank Sheeran looks back at the secrets he kept as a loyal member of the Bufalino crime family in this acclaimed film from Martin Scorsese."
   },
   "TendingNow": [
     {

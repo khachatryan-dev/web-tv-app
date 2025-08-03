@@ -1,159 +1,193 @@
-# 📺 TV Web App
-
-A sleek, modern TV streaming web application built with **Next.js 15** and **Tailwind CSS v4**. This app features a dynamic home page with a featured video section, a responsive carousel of trending content, and an interactive sidebar menu.
+Here you go! Below is the full enhanced `README.md` content for your **Web TV Streaming App**, styled with professional formatting and engaging emojis to make it easy to read and visually appealing.
 
 ---
 
-## 📁 Folder Structure
+# 📺 Web TV Streaming App
+
+![App Screenshot](/public/images/screenshot.png)
+
+A modern **TV streaming application** built with **Next.js 15**, **Tailwind CSS v4**, and **TypeScript**. It features a responsive layout with a video player, trending carousel, and sidebar navigation for seamless browsing.
+
+---
+
+## 🚀 Live Demo
+
+👉 [Try it live on Vercel](https://web-tv-app.vercel.app)
+
+---
+
+## ✨ Features
+
+- 🎥 **Featured Video Player**
+  - YouTube embed with fallback image
+  - Play/pause controls
+  - Persistent selection using `localStorage`
+
+- 🔥 **Trending Videos Carousel**
+  - Smooth horizontal scrolling
+  - Click-to-feature video interaction
+  - Fully responsive design
+
+- 🧭 **Sidebar Navigation**
+  - Collapsible and hover-expandable menu
+  - User profile section
+  - Clean mobile responsiveness
+
+- ⚙️ **Technical Highlights**
+  - Cross-tab synchronization via `storage` events
+  - Type-safe architecture with `TypeScript`
+  - Optimized performance and bundle size
+  - SEO metadata and Open Graph tags
+
+---
+
+## 🛠 Tech Stack
+
+| Technology         | Purpose                |
+|--------------------|------------------------|
+| 🟣 Next.js 15       | Framework & SSR         |
+| 🎨 Tailwind CSS v4 | Styling & UI            |
+| 🔄 React Hooks      | State management        |
+| 🎠 Swiper.js        | Carousel functionality  |
+| 🧰 React Icons      | Iconography             |
+| 🚀 Vercel           | Deployment platform     |
+
+---
+
+## 🏗 Folder Structure
 
 ```
 src/
 ├── app/
-│   ├── api/
-│   │   ├── set-featured/
-│   │   │   └── route.ts        # API to update featured video
-│   │   └── videos/
-│   │       └── route.ts        # API to fetch videos
-│   ├── layout.tsx              # Root layout wrapper
-│   └── page.tsx                # Home page
-│
+│   ├── api/videos/route.ts         # API endpoint for video data
+│   ├── layout.tsx                  # Metadata and page wrapper
+│   └── page.tsx                    # Home page with featured & trending
 ├── components/
-│   └── Layout.tsx              # Shared layout with sidebar
-│
-├── data/
-│   └── videos.json             # Static movie/video data source
-│
+│   └── Layout.tsx                  # App layout with sidebar
 ├── features/
-│   ├── featuredVideo/
-│   │   └── FeaturedVideo.tsx   # Displays and plays featured video
-│   ├── sidebar/
-│   │   └── Sidebar.tsx         # Interactive navigation sidebar
-│   └── trending/
-│       ├── TrendingCarousel.tsx# Carousel for trending videos
-│       └── types.tsx           # Type definition for trending props
-│
+│   ├── featuredVideo/              # Featured video player and types
+│   ├── sidebar/                    # Sidebar navigation component
+│   └── trending/                   # Trending carousel and types
+├── hooks/
+│   └── useFeaturedVideo.ts         # Hook to manage featured state
+├── lib/
+│   └── LocalStorageService/        # Safe wrapper for localStorage
 ├── styles/
-│   └── global.css              # Global styles and Tailwind config
-│
-└── types/
-    └── index.ts                # Shared TypeScript type definitions
+│   └── global.css                  # Tailwind and base styles
+├── types/
+│   └── index.ts                    # Shared TypeScript types
+└── data/
+    └── videos.json                 # Static video data source
 ```
 
 ---
 
-## 🚀 Getting Started
+## ⚙️ Getting Started
 
-### 1. **Clone the repository**
+### 🔧 Prerequisites
 
-```bash
-git clone https://github.com/your-username/tv-web-app.git
-cd tv-web-app
+- Node.js v18 or higher
+- npm or yarn
+
+### 📦 Installation
+
 ```
-
-### 2. **Install dependencies**
-
-```bash
+git clone https://github.com/your-username/web-tv-app.git
+cd web-tv-app
 npm install
 ```
 
-### 3. **Configure Environment**
+### 🔑 Environment Setup
 
-Create a `.env.local` file in the root and add:
+Create `.env.local` file in the root:
 
 ```
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
-Adjust `BASE_URL` depending on your hosting (e.g., Vercel, Netlify, etc.).
+### 💻 Run Locally
 
-### 4. **Run the development server**
-
-```bash
+```
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🌐 API Endpoints
+## 🧠 Key Components
+
+- `Layout.tsx` — Main app layout with sidebar and content
+- `Sidebar.tsx` — Expandable sidebar with icons and profile
+- `FeaturedVideo.tsx` — Main video player with YouTube embed
+- `TrendingCarousel.tsx` — Interactive carousel using Swiper.js
+
+---
+
+## 🔌 Hooks
+
+### `useFeaturedVideo`
+
+Custom hook for:
+- Syncing featured video from URL or `localStorage`
+- Listening for changes across tabs
+
+Path: `src/hooks/useFeaturedVideo.tsx`
+
+---
+
+## 🛠️ Services
+
+### `LocalStorageService`
+
+Smart wrapper for localStorage with:
+
+- JSON serialization
+- TTL support
+- SSR-safe memory fallback
+
+Path: `src/lib/LocalStorageService/index.ts`
+
+---
+
+## 🌐 API
 
 ### `GET /api/videos`
 
-- Returns the full list of featured and trending videos.
-- Reads from `videos.json`.
-
-### `PATCH /api/set-featured`
-
-- Body: `{ "id": "videoId" }`
-- Sets the featured video by ID.
-- Persists changes to `videos.json`.
-- Returns updated featured and trending videos.
+Returns static video data from `src/data/videos.json`  
+Implemented in: `src/app/api/videos/route.ts`
 
 ---
 
-## 🧩 Features
+## 🚢 Deployment
 
-- 🎬 **Featured Video Player**
-    - Shows the current featured video.
-    - On click, auto-plays the trailer using an embedded YouTube iframe.
-    - Allows user to stop the video.
-
-- 🔥 **Trending Carousel**
-    - Fetches a maximum of 50 trending videos.
-    - Scrollable and responsive carousel using `Swiper.js`.
-
-- 📑 **Persistent Featured Selection**
-    - Clicking a trending video updates the featured section after 2 seconds.
-    - Saves selected video ID in `sessionStorage`.
-
-- 🎛️ **Interactive Sidebar**
-    - Expands on hover.
-    - Includes profile info, menu navigation, and footer options.
+- GitHub Actions CI/CD: `.github/workflows/deployment.yml`
+- Auto-deploy on push to `main` via Vercel
+- Supports environment variables and Vercel secrets
 
 ---
 
-## 💻 Tech Stack
+## 🔍 Metadata & SEO
 
-- **Framework**: [Next.js 15](https://nextjs.org)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/docs/upgrade-guide)
-- **Carousel**: [Swiper.js](https://swiperjs.com/)
-- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
-- **Type Safety**: TypeScript
+Defined in `layout.tsx` with:
 
----
-
-## 🗂️ JSON Structure (`/src/data/videos.json`)
-
-```json
-{
-  "Featured": {
-    "Id": "6",
-    "Title": "Avengers: Endgame",
-    ...
-  },
-  "TendingNow": [
-    {
-      "Id": "1",
-      "Title": "The Irishman",
-      ...
-    }
-  ]
-}
-```
+- Title, description, keywords
+- Open Graph preview tags
+- Twitter Cards
+- Robots & Googlebot directives
 
 ---
 
-## 📦 Build for Production
+## 🧪 Environment Variables
 
-```bash
-npm run build
-npm start
-```
+- `NEXT_PUBLIC_BASE_URL` — Base URL for fetch and assets
+- Other secrets defined in Vercel settings
 
 ---
 
-## 👤 Author
+## 📫 Contact
 
-**Aram Khachatryan**  
-🌐 [khachatryan-dev.vercel.app](https://khachatryan-dev.vercel.app)
+Made with ❤️ by **Aram Khachatryan**  
+🌐 [Portfolio](https://khachatryan-dev.vercel.app)
+
+---
