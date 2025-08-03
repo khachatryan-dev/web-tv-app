@@ -1,7 +1,19 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'web-tv-app.vercel.app',
+                pathname: '/images/**',
+            },
+            {
+                protocol: 'http',  // add this to allow http images too
+                hostname: 'web-tv-app.vercel.app',
+                pathname: '/images/**',
+            },
+        ],
+    },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

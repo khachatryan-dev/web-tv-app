@@ -56,7 +56,6 @@ const Trending: React.FC<TrendingProps> = ({ videos }: TrendingProps) => {
                                 width={200}
                                 height={225}
                                 priority
-                                unoptimized
                                 src={`${process.env.NEXT_PUBLIC_BASE_URL}${video.CoverImage}`}
                                 alt={video.Title}
                                 className="rounded-md object-cover w-full h-[225px] transition-transform group-hover:scale-105"

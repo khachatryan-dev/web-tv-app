@@ -27,7 +27,6 @@ export default function FeaturedVideo({ video }: { video: Video | null }) {
                     width={500}
                     height={500}
                     priority
-                    unoptimized
                     src={`${process.env.NEXT_PUBLIC_BASE_URL}${video.CoverImage}`}
                     alt={video.Title}
                     className="absolute top-0 left-0 w-full h-full object-cover"

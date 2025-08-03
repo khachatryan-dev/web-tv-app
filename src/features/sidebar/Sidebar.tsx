@@ -50,8 +50,7 @@ export default function Sidebar() {
                                 width={40}
                                 height={40}
                                 priority
-                                unoptimized
-                                src={`${process.env.NEXT_PUBLIC_BASE_URL}/images/users/avatar.webp`}
+                                src={`${process.env.NEXT_PUBLIC_BASE_URL}images/users/avatar.webp`}
                                 alt="User"
                                 className="h-[40px] rounded-full object-cover flex-shrink-0"
                             />
