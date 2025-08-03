@@ -28,7 +28,8 @@ async function getVideos(featuredId?: string): Promise<{ Featured: Video | null;
 }
 
 export default async function HomePage({ searchParams }: { searchParams: { featuredId?: string }}) {
-  const {Featured, TendingNow} = await getVideos(searchParams.featuredId);
+  const {featuredId = ''} =  await searchParams;
+    const {Featured, TendingNow} = await getVideos(featuredId);
 
   return (
       <Layout>
