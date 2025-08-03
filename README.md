@@ -1,36 +1,159 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📺 TV Web App
 
-## Getting Started
+A sleek, modern TV streaming web application built with **Next.js 15** and **Tailwind CSS v4**. This app features a dynamic home page with a featured video section, a responsive carousel of trending content, and an interactive sidebar menu.
 
-First, run the development server:
+---
+
+## 📁 Folder Structure
+
+```
+src/
+├── app/
+│   ├── api/
+│   │   ├── set-featured/
+│   │   │   └── route.ts        # API to update featured video
+│   │   └── videos/
+│   │       └── route.ts        # API to fetch videos
+│   ├── layout.tsx              # Root layout wrapper
+│   └── page.tsx                # Home page
+│
+├── components/
+│   └── Layout.tsx              # Shared layout with sidebar
+│
+├── data/
+│   └── videos.json             # Static movie/video data source
+│
+├── features/
+│   ├── featuredVideo/
+│   │   └── FeaturedVideo.tsx   # Displays and plays featured video
+│   ├── sidebar/
+│   │   └── Sidebar.tsx         # Interactive navigation sidebar
+│   └── trending/
+│       ├── TrendingCarousel.tsx# Carousel for trending videos
+│       └── types.tsx           # Type definition for trending props
+│
+├── styles/
+│   └── global.css              # Global styles and Tailwind config
+│
+└── types/
+    └── index.ts                # Shared TypeScript type definitions
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/tv-web-app.git
+cd tv-web-app
+```
+
+### 2. **Install dependencies**
+
+```bash
+npm install
+```
+
+### 3. **Configure Environment**
+
+Create a `.env.local` file in the root and add:
+
+```
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+Adjust `BASE_URL` depending on your hosting (e.g., Vercel, Netlify, etc.).
+
+### 4. **Run the development server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 API Endpoints
 
-## Learn More
+### `GET /api/videos`
 
-To learn more about Next.js, take a look at the following resources:
+- Returns the full list of featured and trending videos.
+- Reads from `videos.json`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `PATCH /api/set-featured`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Body: `{ "id": "videoId" }`
+- Sets the featured video by ID.
+- Persists changes to `videos.json`.
+- Returns updated featured and trending videos.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧩 Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 🎬 **Featured Video Player**
+    - Shows the current featured video.
+    - On click, auto-plays the trailer using an embedded YouTube iframe.
+    - Allows user to stop the video.
+
+- 🔥 **Trending Carousel**
+    - Fetches a maximum of 50 trending videos.
+    - Scrollable and responsive carousel using `Swiper.js`.
+
+- 📑 **Persistent Featured Selection**
+    - Clicking a trending video updates the featured section after 2 seconds.
+    - Saves selected video ID in `sessionStorage`.
+
+- 🎛️ **Interactive Sidebar**
+    - Expands on hover.
+    - Includes profile info, menu navigation, and footer options.
+
+---
+
+## 💻 Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/docs/upgrade-guide)
+- **Carousel**: [Swiper.js](https://swiperjs.com/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Type Safety**: TypeScript
+
+---
+
+## 🗂️ JSON Structure (`/src/data/videos.json`)
+
+```json
+{
+  "Featured": {
+    "Id": "6",
+    "Title": "Avengers: Endgame",
+    ...
+  },
+  "TendingNow": [
+    {
+      "Id": "1",
+      "Title": "The Irishman",
+      ...
+    }
+  ]
+}
+```
+
+---
+
+## 📦 Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 👤 Author
+
+**Aram Khachatryan**  
+🌐 [khachatryan-dev.vercel.app](https://khachatryan-dev.vercel.app)
