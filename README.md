@@ -10,6 +10,32 @@ A modern **TV streaming application** built with **Next.js 15**, **Tailwind CSS 
 
 ---
 
+## 📊 Performance & Responsiveness
+
+The app is fully responsive and performs exceptionally well on both desktop and mobile devices.
+
+### 💻 Desktop View – ✅ Perfect Score
+
+![Desktop Screenshot](/public/images/preview/desktop_performance.png)
+
+- ⚡ **Performance**: `100%`
+- 🎨 **Accessibility**: `100%`
+- 🛠️ **Best Practices**: `100%`
+- 🔐 **SEO**: `100%`
+
+### 📱 Mobile View – 🟢 Near Perfect
+
+![Mobile Screenshot](/public/images/preview/mobile_performance.png)
+
+- ⚡ **Performance**: `97%`
+- 🎨 **Accessibility**: `100%`
+- 🛠️ **Best Practices**: `100%`
+- 🔐 **SEO**: `100%`
+
+> 📈 Lighthouse audit was conducted using Chrome DevTools in production mode. The application demonstrates excellent optimization and responsiveness across devices.
+
+---
+
 ## 🚀 Live Demo
 
 👉 [Try it live on Vercel](https://web-tv-app.vercel.app)
