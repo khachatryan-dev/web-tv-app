@@ -27,12 +27,8 @@ async function getVideos(featuredId?: string): Promise<{ Featured: Video | null;
     }
 }
 
-export default async function HomePage({
-                                           searchParams,
-                                       }: {
-    searchParams?: { featuredId?: string };
-}) {
-    const {featuredId} = searchParams || {};
+export default async function HomePage({searchParams}: { searchParams: Promise<{ featuredId?: string }>; }) {
+    const {featuredId = ""} = await searchParams;
     const {Featured, TendingNow} = await getVideos(featuredId);
 
     return (
