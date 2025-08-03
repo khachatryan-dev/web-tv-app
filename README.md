@@ -1,7 +1,3 @@
-Here you go! Below is the full enhanced `README.md` content for your **Web TV Streaming App**, styled with professional formatting and engaging emojis to make it easy to read and visually appealing.
-
----
-
 # 📺 Web TV Streaming App
 
 ![App Screenshot](/public/images/preview/preview.png)
